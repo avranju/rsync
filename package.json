@@ -1,0 +1,20 @@
+{
+  "name": "rsync",
+  "version": "1.0.0",
+  "description": "Remote file sync program",
+  "main": "index.js",
+  "author": "Rajasekharan Vengalil",
+  "license": "MIT",
+  "dependencies": {
+    "scp2": "^0.2.2",
+    "watch": "^0.16.0"
+  },
+  "repository": {
+      "type": "git",
+      "url": "git+https://github.com/avranju/rsync.git"
+  },
+  "bugs": {
+      "url": "https://github.com/avranju/rsync/issues"
+  },
+  "homepage": "https://github.com/avranju/rsync#readme"
+}
