@@ -16,7 +16,7 @@ class ScpRequest {
     
     run(client) {
         // scp file
-        console.log(`Copying ${this.relativePath} to ${this.destPath}...`);
+        console.log(`COPYING: ${this.relativePath}...`);
         client.upload(this.filePath, this.destPath, err => this.onFileCopied(err));
     }
     
@@ -25,7 +25,7 @@ class ScpRequest {
             console.error(`[ERROR]: Copying file ${this.relativePath}. ${err}`);
         }
         else {
-            console.log(`COPIED: ${this.relativePath} to ${this.destPath}`);
+            console.log(`COPIED: ${this.relativePath}.`);
         }
     }
 }

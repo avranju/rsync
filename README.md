@@ -12,6 +12,9 @@ First create a file called `config.json` that looks like this:
 {
   "watchPath": "[path to folder to watch]",
   "destPath": "[destination folder path to be synced with]",
+  "watchConfig": {
+      "ignoreDotFiles": true
+  },
   "scpConfig": {
     "username": "[ssh user name]",
     "privateKey": "[ssh private key ]",

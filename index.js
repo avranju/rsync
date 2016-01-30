@@ -27,8 +27,7 @@ function init(config) {
   client.defaults(config.scpConfig);
 }
 
-function beginWatch(config) {
-  watch.watchTree(config.watchPath, (f, curr, prev) => {
+function onWatch(config, f, curr, prev) {
     if (typeof f == "object" && prev === null && curr === null) {
       // Finished walking the tree
       console.log('Finished walking file tree.');
@@ -42,7 +41,14 @@ function beginWatch(config) {
       // f was changed
       new ScpRequest(config, f).run(client);
     }
-  });
+}
+
+function beginWatch(config) {
+    watch.watchTree(
+        config.watchPath,
+        config.watchConfig,
+        (f, curr, prev) => onWatch(config, f, curr, prev)
+    );
 }
 
 main();
