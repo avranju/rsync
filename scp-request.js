@@ -16,16 +16,16 @@ class ScpRequest {
     
     run(client) {
         // scp file
-        console.log(`COPYING: ${this.relativePath}...`);
+        console.log(`${new Date().toLocaleTimeString()} COPYING: ${this.relativePath}...`);
         client.upload(this.filePath, this.destPath, err => this.onFileCopied(err));
     }
     
     onFileCopied(err) {
         if(err) {
-            console.error(`[ERROR]: Copying file ${this.relativePath}. ${err}`);
+            console.error(`${new Date().toLocaleTimeString()} [ERROR]: Copying file ${this.relativePath}. ${err}`);
         }
         else {
-            console.log(`COPIED: ${this.relativePath}.`);
+            console.log(`${new Date().toLocaleTimeString()} COPIED: ${this.relativePath}.`);
         }
     }
 }
