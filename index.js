@@ -8,11 +8,13 @@ let fs = require('fs');
 let path = require('path');
 let Client = require('scp2').Client;
 let ScpRequest = require('./scp-request');
+let FS = require('fs');
 
 let client = new Client();
 
 function main() {
-  let config = require('./config.json');
+  let config_file_name = (process.argv.length > 2) ? process.argv[2] : './config.json';
+  let config = JSON.parse(fs.readFileSync(config_file_name, 'utf8'));
   init(config);
   beginWatch(config);
 
