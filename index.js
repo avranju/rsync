@@ -22,6 +22,12 @@ function main() {
 }
 
 function init(config) {
+  // if we have ignoreDirectoryPattern in the watchConfig then
+  // parse it as a regex
+  if(config.watchConfig && config.watchConfig.ignoreDirectoryPattern) {
+    config.watchConfig.ignoreDirectoryPattern = new RegExp(config.watchConfig.ignoreDirectoryPattern);
+  }
+
   // read the private key file contents
   config.scpConfig.privateKey = fs.readFileSync(config.scpConfig.privateKey);
 

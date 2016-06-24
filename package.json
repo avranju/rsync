@@ -7,14 +7,14 @@
   "license": "MIT",
   "dependencies": {
     "scp2": "^0.2.2",
-    "watch": "^0.16.0"
+    "watch": "^0.17.1"
   },
   "repository": {
-      "type": "git",
-      "url": "git+https://github.com/avranju/rsync.git"
+    "type": "git",
+    "url": "git+https://github.com/avranju/rsync.git"
   },
   "bugs": {
-      "url": "https://github.com/avranju/rsync/issues"
+    "url": "https://github.com/avranju/rsync/issues"
   },
   "homepage": "https://github.com/avranju/rsync#readme"
 }
